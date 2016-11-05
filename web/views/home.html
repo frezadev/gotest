@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<head>
+    {{template "_header.html"}}
+</head>
+<body>
+    {{template "_menu.html"}}
+    <div class="container">
+      <div class="starter-template">
+        <h1>Just a Sample </h1>
+        <p class="lead">Please Select from the menu</p>
+      </div>
+    </div>
+    {{template "_footer.html"}}
+
+
+    <script>
+        $(function(){
+            $($("#navbar > ul > li")[0]).attr("class","active");
+        });
+    </script>
+</body>

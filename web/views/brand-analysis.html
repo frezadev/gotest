@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<head>
+    {{template "_header.html"}}
+</head>
+<body>
+    {{template "_menu.html"}}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h4>Brand Analysis</h4>
+            </div>
+            <div class="col-md-12">
+                <div class="table-responsive">
+                    <table class="table table-hover table-striped" id="brand-table">
+                        <thead>
+                            <tr>
+                                <td>Brand Name</td>
+                                <td>Total User</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{template "_footer.html"}}
+
+    <script>
+        function loadData(){
+            $("#brand-table > tbody").html("");
+            $.ajax({
+                url: "http://localhost:9090/web/brandanalysiscontroller/get",
+                cache: false
+            })
+            .done(function(data) {
+                $.each(data.data, function(idx, val){
+                    $("#brand-table > tbody").append("<tr><td>"+val.BrandName+"</td><td>"+val.TotalUser+"</td></tr>");
+                });
+            });
+        };
+
+        $(function(){
+            $($("#navbar > ul > li")[1]).attr("class","active");
+            loadData();
+        });
+    </script>
+
+</body>
