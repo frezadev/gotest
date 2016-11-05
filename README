@@ -1,4 +1,6 @@
 How To:
 
-1. Run the main
-2. Open this link in browser http://localhost:9090/web/homecontroller/default
+1. Create the Database "gotest"
+2. Run Sql commands under db folder
+3. Run the main
+4. Open this link in browser http://localhost:9090/web/homecontroller/default
